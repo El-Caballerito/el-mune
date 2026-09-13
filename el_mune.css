@@ -1,0 +1,132 @@
+body {
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.tarjeta-pagina {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.btn-categoria {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 2px solid #ddd;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.btn-categoria:hover {
+    background-color: #007BFF;
+    color: white;
+    border-color: #0056b3;
+}
+
+.contenedor-texto {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: justify;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.contenedor-texto p {
+    line-height: 1.6;
+}
+
+.contenedor-texto h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.imagen-lado {
+    float: left;
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.lista-datos, .lista-canales {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    clear: both;
+}
+
+.lista-datos li, .lista-canales li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.lista-canales a {
+    color: #007BFF;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.lista-canales a:hover {
+    color: #0056b3;
+}
+
+.contenido {
+    display: none;
+}
+
+.nota-aclaracion {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    font-style: italic;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+#tab-biografia:checked ~ .contenedor-texto .Biografia,
+#tab-trayectoria:checked ~ .contenedor-texto .trayectoria,
+#tab-mascotas:checked ~ .contenedor-texto .mascotas,
+#tab-canales:checked ~ .contenedor-texto .canales {
+    display: block;
+}
+
+#tab-biografia:checked ~ .contenedor-botones .lbl-biografia,
+#tab-trayectoria:checked ~ .contenedor-botones .lbl-trayectoria,
+#tab-mascotas:checked ~ .contenedor-botones .lbl-mascotas,
+#tab-canales:checked ~ .contenedor-botones .lbl-canales {
+    background-color: #007BFF;
+    color: white;
+    border-color: #0056b3;
+}
