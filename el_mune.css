@@ -1,17 +1,22 @@
 body {
     background-color: #1e1e1e;
     margin: 0;
-    padding: 40px 20px;
+    padding: 20px 10px;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 .tarjeta-pagina {
     background-color: #ffffff;
-    padding: 40px;
+    padding: 30px 20px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     max-width: 600px;
@@ -26,21 +31,32 @@ input[type="radio"] {
 .contenedor-botones {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .btn-categoria {
     background-color: #f5f5f5;
     color: #333;
     border: 2px solid #ddd;
-    padding: 10px 20px;
-    font-size: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none;
+    flex-grow: 1;
+    max-width: calc(50% - 10px);
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .btn-categoria {
+        flex-grow: 0;
+        max-width: none;
+    }
 }
 
 .btn-categoria:hover {
@@ -59,31 +75,43 @@ input[type="radio"] {
     overflow: hidden;
 }
 
-.contenedor-texto p {
-    line-height: 1.6;
-}
-
-.contenedor-texto h4 {
-    margin-top: 20px;
-    margin-bottom: 5px;
-    color: #333;
+.seccion-flexible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .imagen-lado {
-    float: left;
     width: 150px;
     height: auto;
-    margin-right: 20px;
-    margin-bottom: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 576px) {
+    .seccion-flexible {
+        flex-direction: row; 
+        align-items: flex-start;
+    }
+}
+
+.contenedor-texto p {
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+
+.contenedor-texto h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .lista-datos, .lista-canales {
     list-style-type: none;
     padding: 0;
     margin-top: 15px;
-    clear: both;
+    width: 100%;
 }
 
 .lista-datos li, .lista-canales li {
